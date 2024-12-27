@@ -1,0 +1,2121 @@
+\documentclass[a4paper,12pt]{book}
+%
+%   Guidelines for Degree Projects at BTH.
+%
+%   Authors: Jürgen Börstler
+%
+\newcommand\theVersion{4.0.5} % Don't forget to update
+\newcommand\theDate{January 16, 2023} % Don't forget to update
+%
+%   HISTORY:
+%   - Updated to permanent links to Degree Project websites (20210818)
+%   - Updated links to Degree Project websites (20210623)
+%   - Fixed typo (MUN, 20210113)
+%   - Revision of rubrics: revised rubrics and updated texts and examples accordingly
+%       + revision of authorship and change in acknowledgements in Preface (JUB, 20201029)
+%   - Fixed some typos, updated URLs, and slightly revised the text in the main chapters (Preface and Chp 1-5). (JUB, 20200116)
+%   - Changed ``Fail (0)'' to ``Insufficient (0)'' and added explicit row for ``Insufficient (0)'' in rubric tables. (JUB, 20200113)
+%   - Changed terminology from ``complementation'' to ``revision''. (JUB, 20200109)
+%   - Revised rubric criterion ``Method selection and application''.
+%         Toned down ``requirement'' to discuss alternative methods.
+%         Clarification of differences in Fail (`-' vs `0') in Appendix B.1.
+%         Minor revision of rubric criterion ``Process''. (MUN/JUB, 20200107)
+%   - Refined critical thinking aspect in rubric (consequences of research). (MUN/JUB, 20200103)
+%   - Revised criterion ``Synthesis''. (JUB, 20191220)
+%   - Appendix C: Fixed inconsistency in formatting rules for final reports.
+%        Deleted reference to departments. Updated subsection on rejoinders.
+%        (JUB, 20190521)
+%   - Appendix C: Deleted subsection on compilation theses and added a subsection on
+%     rejoinders. (JUB, 20190311)
+%   - Updated formalia due to new course syllaby for SE- and CI-course. (JUB, 2019-01-17)
+%   - Adapted writing to include more topics. E.g., removed text artefacts refering
+%     to particular programs, areas or faculties. (JUB, 2018-02-14)
+%   - Moved table captions before tables to be consistent with Gunilla's writing
+%     guide. (JUB, 20180112)
+%   - Major revision of main text: deleted most chapters/sections.
+%        Focus on few topics to actually make a complete, but small 
+%        version of the ``instructions'' and renamed them to
+%        ``guidelines''. (JUB, 20161229)
+%   - Major revision of rubrics: revised rubrics and revised texts in 
+%        Appendix A. (JUB, 20161219)
+%   - Minor change in the wording of ``Synthesis'' rubric. (JUB, 20160826)
+%   - Revised rubrics. Deleted intermediate levels 2 and 4 for ease
+%     of use and simplified maintenance. (JUB, 20160426)
+%   - Added reference section. The references are in file ``references.bib''.
+%     (JUB, 20160426)
+%   - Added text to section on opposition. (JUB, 20160426)
+%   - Added text to section on presentation and opposition. (JUB, 20160418)
+%
+%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+%\usepackage[osf,sc]{mathpazo}
+%\usepackage[scaled=0.8]{beramono}
+%\usepackage{times}
+\usepackage[nottoc,numbib]{tocbibind}
+\linespread{1.05}
+\renewcommand{\sfdefault}{iwona}
+%
+\usepackage{savefnmark}
+\setlength{\marginparwidth}{20mm}
+\newcommand{\mnote}[1]{\marginpar{%
+      \vskip-\baselineskip
+      \raggedright\small
+      \itshape\hrule\smallskip\tiny{#1}\par\smallskip\hrule}}
+%
+\usepackage{nameref}
+\usepackage[sort&compress]{natbib}
+\setcitestyle{numbers,square,comma}
+\setlength\belowcaptionskip{4pt}
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 2pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-1in,1in)$);
+\end{tikzpicture}
+\vspace*{2cm}
+\begin{center}
+\includegraphics[scale=0.2]{black_BTH_CMYK}
+\end{center}
+\vspace*{1cm}
+\begin{center}
+{\Large Guidelines for Degree Projects}\\[1cm]
+{Jürgen Börstler and Michael Unterkalmsteiner}\\[3cm]
+Version \theVersion \\[2mm]   % Make sure to update the version number
+{\theDate}
+\end{center}
+\newpage
+
+\thispagestyle{empty}
+\vspace*{3cm}
+\begin{center}
+{\normalsize \textbf{Guidelines for Degree Projects}}\\[3cm]
+{Jürgen Börstler and Michael Unterkalmsteiner\\[0.3cm]Department of Software Engineering}\\
+\end{center}
+\end{titlepage}
+
+\frontmatter
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+This document summarises information regarding the degree
+project courses at Blekinge Institute of Technology (BTH).
+The document covers degree projects in the following types of programs:
+Bachelor of Science, Bachelor of Science in Engineering (BSE\footnote{BSE =
+Swedish ``Högskoleingenjör'', a three-year engineering degree.}),
+one-year and two-year Master of Science programs as well as Master of Science in Engineering (MSE\footnote{MSE = Swedish ``Civilingenjör'', a five-year engineering degree that should
+not be confused with ``Civil Engineering''.}) programs.
+
+The guidelines presented here are intended as a complement to the
+reference literature and the introductory lectures in the corresponding
+degree project courses.
+
+The main parts of this document concern assessment. Assessment rubrics are
+described in detail in the appendices. The rubrics should help students in project
+development and documentation, as well as supervisors, reviewers and examiners
+in performing uniform assessments of degree projects.
+Assessment and grading must always be based on the explicit learning outcomes
+defined in the most recently approved syllabus (``kursplan'') for the degree
+project course in question. Our
+ambition has been to develop assessment procedures and templates that
+capture these learning outcomes.
+
+The generic degree project process and the corresponding
+templates, documents, instructions, and other items have been developed
+and improved by several individuals over the last years. Above all,
+we would like to thank Professor Robert Feldt, who initiated and developed
+the first versions of the process and some of the supporting documents.
+We would also like to specifically thank Niklas Lavesson and Veronica Sundstedt
+who have been co-authors of the initial guidelines developed 2013--2014.
+Additionally, we would like to thank our colleagues at the Faculty of Computing at BTH,
+who have contributed with materials and contents, insightful
+ideas, and suggestions for improvement.
+
+\vspace{1cm}
+\emph{The authors}
+
+\mainmatter
+
+
+\chapter{Introduction}
+\label{chp:intro}
+The degree project is conducted at the end of the education programs that
+lead to Bachelor's, Master's, and Master of Science of Engineering's
+(MSE\footnote{MSE = Swedish ``Civilingenjör'', a five year Engineering
+degree that should not be confused with ``Civil Engineering''}) degrees.
+The purpose of the degree project is to let students practice the necessary skills required
+to independently define, plan, conduct, and present a project.
+A degree project
+focuses on research, on development, or a blend of both. At Blekinge
+Institute of Technology (BTH), degree projects on Master's level should have a clear
+research focus while Bachelor's level projects focus more on development. MSE level projects are typically in-between. Regardless of the type of degree project, it is important
+to note that all projects must have a sound scientific backing.
+
+A typical degree project of 30 ECTS corresponds to 20 weeks of full-time work,
+i.e. 800 hours per person\footnote{Degree project courses at BTH are conducted individually or in pairs}.
+It is important to start working hard and continuously on the project
+from the very beginning, since it will be very difficult to compensate for
+delays.
+
+During the planning, execution, and presentation of the degree project,
+the student is expected to
+apply the knowledge and skills acquired during his or her education to independently
+and deeply explore one or more areas of the main subject.
+At the end, the student will present, orally and in writing, the results of
+the degree project. In addition, the student will review and critically
+appraise another student's thesis.
+
+The remainder of these guidelines is divided into four brief chapters and three appendices.
+Chapter \ref{chp:reasoning}~\emph{\nameref{chp:reasoning}}
+provides a short introduction to the reasoning that
+is expected during development and documentation of a degree project.
+Chapter \ref{chp:academic-writing}~\emph{\nameref{chp:academic-writing}}
+gives a very brief introduction to the key issues in academic writing.
+Chapters \ref{chp:presenting-and-defending}~\emph{\nameref{chp:presenting-and-defending}} and \ref{chp:opposition}~\emph{\nameref{chp:opposition}}
+provide some details about thesis presentations and oppositions, respectively.
+
+The appendices describe in detail the
+rules, instructions, and templates of the degree project courses. Appendix \ref{chp:rubrics}~\emph{\nameref{chp:rubrics}} describes all assessment rubrics and how they weighed together to compute a grade. These templates are
+mainly used by the examiner during the assessment and grading of various
+examination parts. Two of these templates are also used by the supervisor
+and the appointed independent reviewers to assess and recommend grades for
+the project plan and the final version of the thesis. Appendix \ref{chp:aspects}~\emph{\nameref{chp:aspects}} describes the meaning of all rubric aspects. Appendix \ref{chp:templates}~\emph{\nameref{chp:templates}} introduces the document templates used in the degree project courses.
+
+% \vfill
+% \begin{center}
+% \includegraphics[scale=0.075]{bthnotext}
+% \end{center}
+%\chapterendsymbol
+
+
+\chapter{Critical thinking and reasoning}
+\label{chp:reasoning}
+% paul2008miniature
+Carrying out a degree project requires continuous decision making.
+Which topic is worthwhile investigating? Which research questions
+are relevant? Which methods are appropriate to answer them? Etc.
+The reasoning behind these questions should be as objective
+as possible and based on the best information available.
+Our thinking should be critical and not biased by a lack of information
+or our personal beliefs and prejudices.
+
+\section{Key elements of a degree project}
+The key elements of a degree project are the problem that is investigated, its relevance,
+the problem formulation and the purpose of the degree project.
+A degree project must investigate or solve a relevant problem within a specific subject area.
+The problem typically occurs or manifests itself in a specific context in the subject area and should be solved in a scientific or engineering way-of-working.
+
+The \emph{problem} of a degree project is something that lacks an answer or a satisfactory answer within the subject of study.
+The problem has \emph{relevance} when the solution to the problem can be used for something.
+The \emph{problem statement} describes what you want answers to in your degree project.
+The \emph{purpose} describes why you ask the question, what the answers can be used for and who has an interest in the answers.
+
+\section{Guidelines for critical thinking and reasoning}
+To support critical thinking and reasoning, the Foundation for Critical Thinking \cite{paul2008miniature} has defined guidelines for critical thinking and reasoning
+that can be helpful when carrying out a degree project.
+The guidelines are defined along along eight elements of thought:
+(1) Purpose, (2) problem, (3) assumptions, (4) point of view, (5) evidence,
+(6) theories, models and concepts, (7) interpretations and conclusions, and
+(8) implications and consequences.
+%\footnote{The following paragraphs are based on various sources available from the Foundation for Critical Thinking, see \url{http://www.criticalthinking.org}}.
+
+\begin{enumerate}
+    \item All reasoning has a \emph{purpose} or goal. To reason well,
+your purpose must be clearly stated, reasonable and fair.
+Fair means that other points of view should be considered unbiased.
+
+    \item All reasoning addresses a specific \emph{problem}, question, or issue.
+To solve a problem it must be solvable. It is therefore important to
+state research questions clearly and precisely and to understand what
+is needed to answer them.
+
+    \item All reasoning starts from underlying \emph{assumptions}. It is
+important to understand how these assumptions affect your reasoning,
+whether or how they can be justified and how alternative assumptions
+might change your point of view.
+
+    \item All reasoning is done from some \emph{point of view}. Different stakeholders
+might have different points of view. It is important to acknowledge other
+viewpoints and to discuss them fairly.
+
+    \item All reasoning is based on \emph{evidence}. Your reasoning can only be
+as sound as the data it is based on. It is therefore important to
+gather the right type of data and make sure that it is relevant for
+the type of reasoning you have in mind.  
+
+    \item All reasoning is shaped by the \emph{theories}, \emph{models} and \emph{concepts}
+that are used to interpret the evidence. It is therefore important to
+state and explain these theories, models and concepts clearly.
+
+    \item All reasoning makes \emph{interpretations} and draws \emph{conclusions} to make
+sense of the gathered evidence with respect to the theories, models and
+concepts used. Conclusion should be strictly based on the available
+evidence and it should be made clear how underlying assumptions
+might affect these conclusions.
+
+    \item All reasoning has \emph{implications} and \emph{consequences}. These can be
+scientific, technical, social, environmental and ethical. It is important
+to show awareness of positive as well as of negative implications and
+consequences.
+\end{enumerate}
+
+
+%\chapterendsymbol
+
+
+\chapter{Academic writing}
+\label{chp:academic-writing}
+%
+Academic writing should be economic, objective and accurate. 
+The purpose of academic writing is to produce a text that communicates
+knowledge in an unambiguous way. It is the responsibility of the writer to
+convey that knowledge in a readable and understandable way.
+
+The process of academic writing helps the writer to deepen his or her
+understanding of a topic. Putting thoughts and ideas on paper helps the writer to
+get a clearer idea about a topic. Without a clear idea about a topic,
+it is difficult to describe it clearly. It is also difficult to decide what
+is important and what is not. Without knowing what is important, it is difficult
+to decide what to include and what not. It is therefore strongly recommended
+to start writing early and to edit, re-edit, and restructure the text
+continuously.
+
+Please note that editing comprises more than just proofreading for spelling
+and grammar issues. A thesis should have a clear line of reasoning that leads
+a reader through the text. Sections and
+subsections should be in an intuitive and logical order and use expressive
+headers that support readability and understandability.
+
+A good thesis should be clear, concise, coherent and cohesive. 
+Think about what you want to tell the reader and tell it as clearly and
+concisely as possible. Try to avoid long-winded sentences that are
+difficult to read and to understand. All content must be relevant and fit well together. Ideas that are presented together
+should also belong together, i.e. your ideas should be connected and
+related to each other (\emph{$\rightarrow$ coherence}). These
+connections on idea level should be supported by connections on
+actual text level. The sentences, paragraphs and sections should
+create a logical flow of those ideas (\emph{$\rightarrow$ cohesion}).
+
+We suggest the textbooks \textit{Writing for Computer Science}
+\cite{zobel2014writing} and \textit{Science Research Writing for Non-native Speakers of English} \cite{Glasman2021science} for more information on academic writing. You can
+find further useful resources regarding academic writing on the Degree Project course pages at
+\url{https://studentportal.bth.se/degree-projects-science-engineering}
+(in English, for a range of Bachelor and Master programs)
+and \url{https://studentportal.bth.se/examensarbete-for-civilingenjorer}
+(in Swedish, for MSE programs).
+
+%\chapterendsymbol
+
+
+\chapter{Presenting and defending the thesis}
+\label{chp:presenting-and-defending}
+Each student will present and defend his or her degree project in person at BTH.
+Presentations will be scheduled at three occasions each year\footnote{Presentation
+dates are usually in the end of January, early June and the end of September.
+The exact dates are available at
+\url{https://studentportal.bth.se/degree-projects-science-engineering}
+and \url{https://studentportal.bth.se/examensarbete-for-civilingenjorer}, respectively.}.
+To be allowed to present, an approved project plan and an approved thesis draft are required. 
+
+The total scheduled time for a 30~ECTS (15~ECTS) thesis is typically 1~hour (45~minutes),
+which is split as described below\footnote{Time distribution might vary a little
+from course to course. If in doubt, please check with your course responsible.}.
+Presenters (and opponents) are supposed to stay within the allocated time.
+Extreme over- or under-runs in the timing for a presentation or opposition
+might lead to a failing grade.
+\begin{enumerate}
+	\item The student presents his or her work. A presentation should usually take
+	      about 20 minutes for a Bachelor's thesis, about 25 minutes for a MSE thesis,
+				and 25--30 minutes for a Master's thesis.
+	\item The opponent comments the thesis and raises questions and issues.
+	      Oppositions are usually individual and should typically take 5--10 minutes
+				for a Bachelor's or a Master's thesis and about 10 minutes for a MSE thesis.
+	\item The examiner comments the thesis and raises questions and issues.
+	\item The supervisor comments the thesis and raises questions and issues.
+	\item The audience comments the thesis and raises questions and issues.
+\end{enumerate}
+
+The main goal of a degree project presentation is to explain in detail what
+you have achieved and what others and the research community can learn from your
+work and/or experience. The presentation should be on a suitable academic
+level for the target audience. Since your main audience are fellow students and
+faculty, you do not need to describe everything from scratch. However, you should not try to ``show off''. A presentation that most people do not
+understand will not earn you a good grade. 
+
+It can feel quite challenging to present a degree project in 20--30
+minutes, it is therefore very important to focus a presentation on a clear
+message. \textit{What are the main points you want to get across?}
+Try to focus on the main points. Since you cannot cover everything, it is
+as important to figure out what you need to talk about as what you can
+ignore.
+
+Start out by telling the audience \textit{who} you are, \textit{what} you
+are going to talk about and \textit{why} this topic is relevant and interesting.
+Try to summarize what you have covered every now and then to keep your
+audience on track. Since people will not remember much from your presentation,
+make sure to end your presentations with your main contribution. A clear
+``take away message'' or some other unusual element (a life demo, an
+interesting video, or creative diagram) might also be helpful to make your
+presentation memorable.
+
+Besides actual timing and contents, it is also important to actually present
+well and use visuals that support your presentation. You should face the
+audience, talk clearly and loudly, and in a reasonable speed. Talking to fast
+will exhaust the audience, while talking too slow might bore the audience.
+By talking faster, you might be able to cover more material, but the audience
+will find it more difficult to follow your presentation. Even if you manage to
+cover more material, the audience might not remember much from your
+presentation.
+
+Make sure to rehearse your presentation, preferably with an audience.
+A script may help you to remember what you want to say, but \textit{don't
+read your visuals and don't learn and present your presentation by heart}.
+The audience expects to be spoken to and not read to; the latter feels
+artificial and will not be appreciated.
+
+During the defense, you might also be asked questions that go beyond the
+typically relatively narrow topic covered by your degree project. It is therefore
+important that you know the area, in large, and the context of your topic well.
+You cannot know everything, of course, but you should be able to discuss your
+topic in a professional and knowledgeable way.
+
+To support your audience, you should number your slides for easier reference.
+
+
+\chapter{Critical appraisal of another thesis (opposition)}
+\label{chp:opposition}
+%
+Each student will critically appraise another thesis. This critical
+appraisal (opposition) should take 5--10 minutes, depending on the type of degree project.
+Extreme over- or under-runs of the timing, or too trivial an opposition might lead to a failing grade.
+
+The purpose of the opposition is three-fold. First, you (the opponent)
+should demonstrate that you can objectively, critically, and constructively evaluate
+a substantial piece of academic work. Second, you should demonstrate that you
+can put a piece of scientific work into context and ask meaningful questions
+about it.
+Third, the opponent's comments and questions should help to assess whether
+the presenter can defend his or her work reasonably well.
+
+An opposition should be constructive, i.e not simply criticizing the work
+but also suggesting ways for improvement. That means that you need to
+read up on the topic of the thesis if you are unfamiliar with the topic
+assigned to you for opposition.
+In the oral opposition, you should try to engage the presenter(s) in a
+discussion about the work. Questions that can simply be answered by ``yes''
+or ``no'' should therefore be kept to a minimum.
+
+As an initial checklist for questions, you can use the \textit{Topics for
+Opposition} from the introduction lecture. A more detailed checklist with
+specific questions for different parts or aspects of a thesis can for example
+be found in one of the course textbooks (\cite[chp~12.2]{berndtsson2007thesis}).
+
+After the opposition, the opponent shall send his or her opposition report
+directly and timely to the presenter(s), since they need it for preparing the
+final version of their report as well as their rejoinder.
+
+%\chapterendsymbol
+
+
+\appendix
+
+\chapter{Assessment rubrics}
+\label{chp:rubrics}
+The assessment rubrics are used by different constellations of
+examiners, supervisors, and appointed independent reviewers to assess
+project plans, theses, presentations and defenses, and written and
+oral oppositions. It is important to remark that the supervisors and
+independent reviewers are not actually grading any examination part.
+Their assessments only serve as an input to the examiner. The examiner is
+finally and formally responsible for assessing and grading the different
+examination parts and his or her assessment can deviate from the assessments
+by the supervisors and reviewers.
+
+\begin{table}
+\small
+\centering
+\caption{Assessment scales and values}
+\label{tab:bedomningsskalor}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+                            & 2-level   & 3-level   & 7-level   &           \\
+Assessment                  & scale     & scale     & scale     & Value     \\\hline
+Fail                        & U         & U         & F         & --        \\\hline
+Insufficient~--~Minor rework required   & U & UX  & FX        & $0$       \\\hline
+Acceptable                  & G         & G         & E         & 1         \\\hline
+Satisfactory                & G         & G         & D         & 2         \\\hline
+Good                        & G         & G         & C         & 3         \\\hline
+Very good                   & G         & G         & B         & 4         \\\hline
+Excellent                   & G         & G         & A         & 5          \\\hline
+\end{tabular}
+\end{table}
+
+All examination parts are assessed using the 2-level or 3-level scale, except
+the thesis for which a 7-level scale is used. The difference between the
+2-level and the 3-level scale is that the latter includes the assessment
+\emph{Insufficient~--~Minor rework required}. The grade of an examination part
+is based on a summarised assessment of several aspects of a number of
+assessment criteria, unless an alternative approach is explicitly stated.
+Table~\ref{tab:bedomningsskalor} describes the various assessment scales.
+The assessment criteria and aspects for all examination parts are summarised in
+Table~\ref{tab:kriterier-oversikt}.
+
+\begin{table}
+\centering
+\caption{Overview over assessment criteria for all examination parts.}
+\label{tab:kriterier-oversikt}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+Assessment          & Project   &           & Pres. \& & Written & Oral    \\
+Criterion           & Plan      & Thesis    & Defense  & Oppos.  & Oppos.  \\\hline
+Process             &           & X         &          &         &         \\\hline
+Contents            & X         & X         &          & X       &         \\\hline
+Scientific quality        &           & X         &          &         &         \\\hline
+Presentation        & X         & X         & X        & X       & X       \\\hline
+Overall impression  &           & X         &          &         &         \\\hline
+\end{tabular}
+\end{table} 
+
+\emph{To achieve a passing grade,
+all assessment criteria should have received a value of at least 1.}
+If any of the assessment criteria receives value ``--'', the submission as
+a whole will receive grade Fail, independently of how well the
+other criteria are evaluated.
+
+If the grade is \emph{Fail}, the thesis
+needs to be resubmitted at a later regular submission deadline.
+If the grade is \emph{Insufficient~--~Minor rework required}, the student is
+given a time-limited opportunity to revise the
+examined part in question.\footnote{The time given for revision might differ
+depending on the examination component and the course. Common times for revisions are ten calendar days
+for project plans and opposition reports, and four calendar weeks for final reports.}
+After revision, a thesis will be either graded as Fail (U/F) or as Pass (G/E),
+grades A--D are not possible. 
+The thesis will be awarded the grade Fail (U/F) if:
+
+\begin{itemize}
+\item the thesis has not been submitted to the examiner within the designated
+      deadline after an oral presentation and defense, or if
+\item the examiner determines that the revision did not fulfill
+      the requirements for a passing grade (for example, because some assessment criterion still does not reach a value $\geq$ 1).
+\end{itemize}
+
+Each student has three or five\footnote{Please consult your course syllabus for the actual
+rules for your specific course.} opportunities to be examined to achieve a passing grade
+on any of the examination parts of the degree project course. After two such
+opportunities, the student is entitled to request a change of examiner.
+Such a request must be made in writing to the university's vice chancellor.
+After three or five failing grades, respectively, in any of the examination parts,
+a student can no longer register or re-register for the same degree project course.
+Please note that some courses require that a project plan is submitted by the end of
+the course. Not following this requirement results in a failing grade for the project
+plan component.
+
+When all assessment aspects have received a value $\geq$ 1, a weighted mean is computed
+to determine the final grade. The computation is based on the
+values of all assessed aspects for all assessment criteria.
+The weighted mean is then rounded off to the nearest integer\footnote{As in the
+Swedish rounding rules; \url{http://en.wikipedia.org/wiki/Swedish_rounding}.}.
+This integer is then translated to the corresponding grade according to the 7-level scale.
+%If the computed grade differs more than two steps from the lowest aspect value,
+%the grade is lowered until it does not differ more than two steps from the
+%lowest aspect value.
+
+The weighting of assessment criteria of differs between
+degree projects of different types (see Table~\ref{tab:viktning}).
+%
+\begin{table}
+\centering
+\caption{Weighting of criteria for various types of theses.}
+\label{tab:viktning}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Assessment                  & Bachelor/ & 1-year  & 2-year &        \\
+Criterion                   & BSE       & Master  & Master & MSE    \\\hline
+Process                     & 0.20      & 0.15    & 0.10   & 0.15   \\\hline
+Contents                    & 0.35      & 0.35    & 0.35   & 0.35   \\\hline
+Scientific quality          & 0.20      & 0.25    & 0.35   & 0.30   \\\hline
+Presentation                & 0.25      & 0.25    & 0.20   & 0.20   \\\hline
+\end{tabular}
+\end{table}
+%
+\section{Assessment rubrics for project plans}
+%
+Through the project plan, the student shall demonstrate broad knowledge
+and a deepened understanding of methodologies relevant for the subject. The project
+plan shall describe a clearly defined and delimited degree project with
+the purpose to creatively, critically, and independently answer one or
+more identified and formulated research questions within at least one
+specific area of the subject. The project plan shall contain a critical
+review of relevant scientific literature and it shall clarify the student's
+view and understanding of the state-of-the-art and the state-of-practice in
+the selected area
+of study. The project plan shall identify any potential risk related to the
+selected approach and how they can be mitigated. The project plan should also
+describe specific needs of knowledge gathering necessary
+for completing the degree project. The student shall define a clear and
+adequate time and activity plan and describe suitable approaches to
+answer the formulated research questions within the given constraints.
+
+The assessment rubrics for project plans are presented in 
+Table~\ref{tab:bedomning-projektplan}. Since the project
+plan merely describes \emph{proposed work}, the assessment of several
+aspects is based on the expected outcomes, assuming that the student pursues
+the project according to the project plan. 
+%
+\begin{table}[h]
+\centering
+\caption{Assessment rubrics for project plans.}
+\label{tab:bedomning-projektplan}
+\begin{tabular}{|l|l|l|}
+\hline
+Criterion      & Aspect                                     & Value* \\\hline
+Contents       & Background analysis                        &       \\\hline
+               & Problem formulation                        &       \\\hline
+               & Method selection and application           &       \\\hline
+               & Knowledge and understanding                &       \\\hline
+               & Critical thinking and reasoning            &       \\\hline
+               & Planning                                   &       \\\hline
+Presentation   & Disposition, formatting and layout         &       \\\hline
+               & Handling of references and citations       &       \\\hline
+               & Language                                   &       \\
+\hline
+\multicolumn{3}{l}{\footnotesize{Value $\in \{-,0..5\}$, see Table~\ref{tab:bedomningsskalor}}.}
+\end{tabular}
+\end{table}
+
+
+\section{Assessment rubrics for theses}
+Through the thesis, the student shall demonstrate broad knowledge and a deepened
+understanding of methodology in the subject. The thesis shall contain the description
+of a clearly defined and delimited degree project for which the purpose was to
+creatively, critically, and independently answer one or more identified and formulated
+research questions within at least one specific area of the subject. The student shall,
+through the thesis, demonstrate significantly deepened knowledge in the selected area
+of study, which comprises deepened insights of the state-of-the-art and the
+state-of-practice\footnote{For a Bachelor-/BSE-level thesis, the requirements are not as
+strong as formulated here. Please consult the current course descriptor for your
+particular course for details.}\saveFN\bach.
+The thesis shall contain a critical review of related scientific literature within the
+selected area of study. Furthermore, the thesis shall clearly and in detail describe and
+motivate a suitable approach to answering the formulated research question(s).
+The conducted degree project shall contribute to knowledge development in the
+subject area\useFN\bach.
+The thesis shall contain a clear description of findings as well as an
+insightful and scientifically based analysis and synthesis of these findings.
+The contribution shall be discussed in relation to the
+relevant scientific, engineering, societal, and ethical aspects. The thesis must adhere
+to the standards and requirements of scientifically grounded work.
+
+The assessment rubrics for theses are presented in Table~\ref{tab:bedomning-uppsatser}.
+The aspects for ``Contents'' and ``Presentation'' are very similar for project plans.
+The meaning of some of the aspects, however, differ between the two
+artefacts since project plans are assessed from the perspective of expected outcomes
+instead of actual outcomes.
+
+\begin{table}[hbt]
+\centering
+\caption{Assessment rubrics for theses. The Process
+criterion is only assessed by supervisors.
+Overall impression represents a cumulative assessment of the
+overall impression of the thesis. It can be used to communicate strengths or weaknesses
+that are not captured well by existing assessment criteria or aspects.}
+\label{tab:bedomning-uppsatser}
+\begin{tabular}{|l|l|l|}
+\hline
+Criterion      & Aspect                                     & Value \\\hline
+Process        & Independence, initiative and creativity    &       \\\hline
+               & Openness to critique and supervision       &       \\\hline
+               & Planning and execution                     &       \\\hline
+Contents       & Background analysis                        &       \\\hline
+               & Problem formulation                        &       \\\hline
+               & Method selection and application           &       \\\hline
+               & Knowledge and understanding                &       \\\hline
+               & Analysis and discussion                    &       \\\hline
+Scientific quality   & Overall contribution                       &       \\\hline
+               & Scientific \& engineering reasoning        &       \\\hline
+               & Traceability and validity                  &       \\\hline
+               & Synthesis                                  &       \\\hline
+Presentation   & Disposition, formatting and layout                     &       \\\hline
+               & Handling of references and citations       &       \\\hline
+               & Language                                   &       \\\hline
+\multicolumn{2}{|l|}{Overall impression}                    &       \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Example}
+\label{sec:assessment-example}
+The examiner has weighted together the reviews from the supervisor and independent reviewers
+with his/her own impression with the following overall results for the criteria
+Process, Contents, Scientific quality, and Presentation:
+
+\begin{align*}
+        Process &= \{1,2,1\} \\
+       Contents &= \{2,4,2,2,3\} \\
+   Scientific\ quality &= \{2,3,2,3\} \\
+   Presentation &= \{3,2,2\}
+\end{align*}
+
+According to the weighting scheme for a 2-year Master thesis 
+project (see Table~\ref{tab:viktning}), the grade is computed as follows:
+
+\begin{equation*}
+   0.1(\frac{1+2+1}{3})+0.35(\frac{2+4+2+2+3}{5})+0.35(\frac{2+3+2+3}{4})+0.2(\frac{3+2+2}{3})=2.385
+\end{equation*}
+
+The mean is rounded according to the Swedish rounding rules and the resulting 
+value, $2$, corresponds to grade D. If there was reasonable consensus among the
+supervisor and independent reviewers and the examiner's own impression is not much
+different from that, the examiner will likely award grade D.
+In case of large differences between assessments, the examiner discusses the
+assessments with the supervisor and independent reviewers to arrive at a fair
+and well grounded grade.
+
+\newpage
+\section{Assessment rubrics for oral presentations and defenses}
+During the presentation and defense of the degree project, the student shall
+demonstrate a good understanding of the are studied in the thesis as well as a good understanding of the methods used.
+Furthermore, the student shall demonstrate the necessary skills and abilities to orally communicate and clearly
+explain and discuss his or her conclusions and the knowledge and arguments behind them, in
+dialogue with researchers, students at the same level in the field and lay people. 
+Table~\ref{tab:bedomning-muntligt-forsvar} describes the criteria
+and aspects for assessing oral presentations and defenses. Only the examiner
+assesses the oral presentations and defenses.
+
+\begin{table}[hbt]
+\centering
+\caption{Assessment rubrics for oral presentations and defenses.}
+\label{tab:bedomning-muntligt-forsvar}
+\begin{tabular}{|l|l|l|}
+\hline
+Criterion       & Aspect                                          & Value \\\hline     
+Contents        & Knowledge and understanding                     &       \\\hline     
+Presentation    & Oral description of problem and method          &       \\\hline
+                & Oral description of analysis and contribution   &       \\\hline
+                & Overall communication skills                    &       \\\hline
+                & Argumentation- and discussion abilities         &       \\
+\hline
+\end{tabular}
+\end{table} 
+
+
+\section{Assessment rubrics for the written opposition}
+Through the opposition report, the student shall demonstrate his or
+her ability to provide constructive criticism and feedback and communicate
+his or her conclusions after reading another student's thesis. The
+student shall review the basis for the provided criticism and
+conclusions. The constructive criticism, the conclusions, and the
+arguments behind them, shall be summarised in a report to be read
+by the examiner as well as the author of the reviewed thesis.
+The opposition report shall include the results of a systematic
+and critical review in which sufficient consideration has been put on
+all relevant scientific, engineering, societal, and ethical aspects
+of the thesis' contribution.
+
+Table~\ref{tab:bedomning-skriftlig-opposition} describes the criteria and aspects
+for assessing the opposition report. Only the
+examiner assesses the opposition reports. The opponent is expected
+to first describe the results of the critical review and then a list of
+clear and concise suggestions for necessary and recommended revisions.
+The necessary changes are those changes that must be performed in order
+for the opponent to consider a Pass grade for the thesis. The recommended
+changes are those changes that should be performed in order to increase
+the quality (and grade) of the thesis.
+
+\begin{table}[hbt]
+\centering
+\caption{Assessment rubrics for the written opposition.}
+\label{tab:bedomning-skriftlig-opposition}
+\begin{tabular}{|l|l|l|}
+\hline
+Criterion       & Aspect                                & Value \\\hline     
+Contents        & Knowledge and understanding           &       \\\hline
+                & Description of critical review        &       \\\hline
+                & Description of necessary revisions    &       \\ 
+                & and recommended revisions             &       \\\hline     
+Presentation    & Analysis and argumentation            &       \\\hline
+                & Language                              &       \\
+\hline
+\end{tabular}
+\end{table} 
+
+
+\section{Assessment rubrics for the oral opposition}
+%
+Through the oral opposition, the student shall demonstrate his or
+her abilities to provide constructive criticism and discuss
+his or her conclusions about the other student's thesis based on
+the conducted review. The opponent shall review the arguments behind
+the criticism and the conclusions. The constructive criticism,
+the conclusions, and the arguments behind them shall be discussed
+in dialogue with the author of the thesis on a level that makes it
+possible for the participating students, lay people, and researchers
+to appreciate and understand the core of the discussion. The
+provided criticism must be based on a systematic and critical
+review of the thesis in question in which consideration has been put on
+all relevant scientific, engineering, societal, and ethical aspects
+of the thesis' contribution.
+
+Table~\ref{tab:bedomning-muntlig-opposition} describes the criteria and aspects
+for assessing the oral opposition. Only the examiner
+assesses and grades the oral opposition. The opponent should show a good understanding
+of the thesis he or she reviewed. During the oral opposition, the opponent shall
+demonstrate an ability to provide balanced and constructive criticism as well as to lead
+a constructive and critical discussion with the respondent.
+
+\begin{table}[h]
+\centering
+\caption{Assessment rubrics for the oral opposition.}
+\label{tab:bedomning-muntlig-opposition}
+\begin{tabular}{|l|l|l|}
+\hline
+Criterion      & Aspect                                & Value \\\hline
+Contents       & Knowledge and understanding           &       \\\hline     
+Presentation   & Overall communication skills          &       \\\hline
+               & Analysis and argumentation            &       \\ 
+\hline
+\end{tabular}
+\end{table}
+
+%\chapterendsymbol
+
+
+\chapter{Evaluation and weighting of aspects}
+\label{chp:aspects}
+%
+All degree project courses share the same assessment criteria, see
+Table~\ref{tab:kriterier-oversikt}, but their weighting differs depending
+on the type of degree project.
+Table~\ref{tab:viktning} describes the relative weights of the assessment criteria
+for Bachelor of Science, Bachelor of Science in Engineering (BSE\footnote{BSE =
+Swedish ``Högskoleingenjör'', a three-year engineering degree.}), one-year Master, two-year
+Master, and Master of Science in Engineering (MSE\footnote{MSE =
+Swedish ``Civilingenjör'', a five year engineering degree that should
+not be confused with ``Civil Engineering''}) degree projects.
+
+The project plan and the thesis are assessed by the supervisor, the examiner,
+and the appointed independent reviewers. 
+Since the course grade is only based on the assessment of the thesis, the
+weighted mean of aspect values is only computed for this examination part.
+The weighting of aspects is determined by the criterion weight as exemplified
+in detail in Section~\ref{sec:assessment-example}.
+
+In the following subsections, we provide textual descriptions for the assessment
+levels of all aspects for all assessment criteria. These textual descriptions should
+be used as guidelines for assessment. Please note that there
+are no specific textual descriptions for level \emph{Insufficient}.
+As described in Chapter~\ref{chp:rubrics}, grade Insufficient means that an examination component can be revised to reach a passing grade.
+The rubrics should therefore be used as follows:
+\label{ref:two-fails}
+\begin{itemize}
+    \item \emph{Fail} (Value ``--'') should be used when several of the conditions described in row \emph{Fail (--)} are true.
+    \item \emph{Acceptable}  (Value ``1'') should be used when all conditions listed in row \emph{Acceptable (1)} are fulfilled.
+    \item \emph{Insufficient} (Value ``0'') should be used when the level of performance is close to level \emph{Acceptable} and only little rework would be required to reach level \emph{Acceptable}.
+\end{itemize}
+Common times for revisions are ten calendar days for project plans and four calendar weeks for final reports.
+Please do also note that although we do not provide textual descriptions for levels
+\emph{Satisfactory} and \emph{Very good}, these levels are nevertheless used for
+assessment.
+
+
+\clearpage
+\section{Evaluation of aspects for project plans and theses}
+%
+Since the rubrics for project plans and theses are very similar,
+they are described together here. Where the criteria or aspects differ it is indicated. 
+
+\newcommand\tableEntryInsufficient{\multicolumn{1}{|c|}{\footnotesize{\textit{Close to level \emph{Acceptable}; minor rework required to reach \emph{Acceptable}.}}}} % To slip repetitive entry
+%
+\subsection{Process (theses only)}
+
+% Independence, initiative and creativity
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Independence, initiative and creativity}} \\
+\hline
+\textbf{Fail} (--) &
+Lets supervisor be the main driver of the thesis project. Does not provide own ideas and suggestions for the direction, focus or contents of the thesis project. Insufficient or defective status/progress reporting. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Takes some initiative in driving the project. Proposes some simple or initial own ideas for the direction, focus or contents of the thesis project. Some status/progress reporting that provides only limited information. \\
+\hline
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Main driver of the project. Proposes and develops own ideas, which are creative to some degree. Regular and informative status/progress reports. \\
+\hline
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Drives the project independently with minimal guidance from the supervisor. Creates, develops, and realizes own creative ideas that fit the context well. Keeps the supervisor well informed about the status/progress of the thesis project. \\
+\hline
+\end{tabular}
+\end{center}
+%
+% \footnotetext{See page~\pageref{ref:two-fails}:
+% Value ``0'' indicates that only little rework is required to
+% reach level \emph{Acceptable}. When several of the conditions described
+% for \emph{Fail} are true, the assessment result should be ``--''.}
+
+% Openness to critique and supervision
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Openness to critique and supervision}} \\
+\hline
+\textbf{Fail} (--) &
+Inability to revise ideas, methods or contents despite recurring constructive feedback. Supervisor's comments and feedback lead to only marginal progress of the thesis project. Comments/feedback are handled purely locally, without extrapolation to other parts of his/her work. Shows little personal and topic-specific development. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Mistakes and defects are corrected based on direct feedback. Some extrapolation of comments/feedback to other parts of his/her work. Makes acceptable progress regarding problem solving, creativity and academic writing based on supervision. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Responsive and adaptive for supervision. Develops ability to self-identify mistakes, errors, and improvement opportunities. Good extrapolation of feedback to other parts of his/her work. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Excellent ability to request and utilize appropriate forms of supervision. Well developed ability to critically and objectively examine and improve his/her own work. Excellent extrapolation and adaptation of feedback to the rest of his/her work. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+% Planning and execution
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Planning and execution}} \\
+\hline
+\textbf{Fail} (--) &
+Purely reactive way-of-working; leaves setting expectations and definition of targets (tasks, milestones, deadlines) to supervisor and the pre-set course deadlines. Unrealistic own planning that lacks a meaningful risk analysis. Irregular work of insufficient quality. Makes only slow progress in marginal increments. Misses targets regularly. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Shows some pro-active ways-of-working. Acceptable own planning that considers some relevant risks. Regular work of acceptable quality. Acceptable progress in acceptable increments. Some status tracking and occasional re-planning. Misses set targets infrequently. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) & 
+Works mainly pro-actively. Good planning with basic risk management (i.e. risk identification, impact analysis, and mitigation). Systematic execution of plan. Steady progress. Sufficient status tracking and re-planning. Rarely misses set targets. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Works pro-actively with little intervention from supervisor. Excellent planning and very good risk management. Systematic execution of plan. Steady progress. Excellent status tracking. Regular reconsideration/revision of plans. Rarely misses set targets. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+
+\clearpage
+\subsection{Content (project plans and theses)}
+
+% Background analysis
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Background analysis}} \\
+\hline
+\textbf{Fail} (--) &
+Background and context are described insufficiently. Knowledge gap is unclear or
+irrelevant. Several significant relevant concepts and several significant related
+works are missing. Describes many irrelevant concepts and works. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Background and context are described sufficiently. A relevant knowledge gap is identified.
+Identifies the most important relevant concepts and the most significant related works.
+Includes few irrelevant concepts and works. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) & 
+Background and context are described well. Clearly describes a relevant
+knowledge gap. Shows awareness of most relevant concepts and related works. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Background and context are described excellently. Clearly describes an actual and
+highly relevant knowledge gap. Clearly describes all relevant concepts
+and all relevant related works. \\
+\hline
+\end{tabular}
+\end{center}
+
+% Problem formulation
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Problem formulation}} \\
+\hline
+\textbf{Fail} (--) &
+Goals, aims and objectives are poorly related to the background analysis.
+Scope is not described or is either unclear or much too ambitious or much too broad for a thesis project.
+The research questions are irrelevant, poorly formulated or poorly
+related to the goals, aims and objectives.
+Expected results/outcomes are unclear or irrelevant. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Goals, aims and objectives are sufficiently related to the background analysis.
+Scope is described and acceptable for a thesis project.
+Some research questions are formulated well.
+Some research questions are relevant and related to the goals, aims and objectives.
+Indicates expected results/outcomes. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Goals, aims and objectives are clearly derived from the background analysis.
+Scope is described and fits a thesis project well.
+Research questions are formulated well.
+Research questions are relevant and clearly related to the stated goals, aims and objectives.
+Expected results/outcomes are relevant.
+Describes expected results/outcomes and indicates stakeholders who could benefit from them. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Goals, aims and objectives are clearly derived from the background analysis.
+Scope is described very clearly, is very ambitious (but not over-ambitious) and fits for thesis project well.
+Research questions are formulated excellently and creatively.
+Research questions are relevant and clearly and explicitly related to the stated goals, aims and objectives.
+Describes expected results/outcomes clearly as well as how various stakeholders would benefit from them. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+% Method selection and application
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Method selection and application}} \\
+\hline
+\textbf{Fail} (--) &
+Inadequate selection of method(s) and poor application of method(s).
+Lacks a clear motivation for and description of the selected method(s).
+Lacks a discussion of limitations of the selected method(s).
+Lacks a discussion of alternative method(s). \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Acceptable selection of method(s) and acceptable application of method(s).
+The selected methods are motivated and described in an acceptable way.
+Some limitations of the selected methods are indicated.
+Relevant alternative methods are indicated but not discussed. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) & 
+Good selection of methods that together represent a comprehensive and appropriate approach. Good application of method(s).
+The selection of methods is well motivated and described.
+The limitations of the selected methods are discussed.
+Relevant alternative methods are discussed.  \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Excellent selection and application of methods that demonstrates a thorough understanding of the methods' strengths, weaknesses, and limitations in the thesis project's context.
+Relevant alternative methods are discussed thoroughly. \\
+\hline
+\end{tabular}
+\end{center}
+
+% Knowledge and understanding (project plans and final reports)
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Knowledge and understanding}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks a broad knowledge and understanding in the main subject of study.
+Lacks substantially deeper knowledge of at least one sub-area of the main subject of study.
+Lacks a deeper insight into current research and development of the main subject of study. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Demonstrates a broad knowledge and understanding in the main subject of study.
+Indicates substantially deeper knowledge of at least one sub-area of the main subject of study.
+Indicates a deeper insight into current research and development of the main subject of study. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates a broad knowledge and understanding in the main subject of study.
+Demonstrates substantially deeper knowledge of at least one sub-area of the main subject of study.
+Demonstrates a deeper insight into current research and development of the main subject of study. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Clearly demonstrates a broad knowledge and understanding in the main subject of study.
+Clearly demonstrates substantially deeper knowledge of at least one sub-area of the main subject of study.
+Clearly demonstrates a deeper insight into current research and development of the main subject of study. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+% Analysis and discussion
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Analysis and discussion}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks ability or willingness to objectively and critically analyze and discuss the relevance, reliability and validity of information/claims.
+Lacks evidence-based reasoning.
+Lacks a discussion of societal, ethical and/or environmental aspects of the work. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Indicates some ability to objectively and critically analyze and discuss the relevance, reliability and validity of information/claims.
+Key facts, claims and reasoning are relevant, objective, critical and supported by evidence.
+Indicates some insight into the work's impact on society, ethics and/or the environment and/or the consequences on society, ethics and/or the environment that follow weakly supported claims. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates an ability to objectively and critically analyze and discuss the relevance, reliability and validity of information/claims.
+Most facts, claims and reasoning are relevant, objective, critical and based on evidence.
+Demonstrates insight into the work's impact on society, ethics and/or the environment and/or the consequences on society, ethics and/or the environment that follow weakly supported claims. \\
+\hline
+\textbf{Very good} (4) & \ldots \\
+\hline
+\textbf{Excellent} (5) &
+Excellent ability to objectively and critically analyze and discuss the relevance, reliability and validity of information/claims.
+Excellent evidence-based reasoning abilities; all facts, claims and reasoning are relevant, objective, critical and based on evidence.
+Clearly demonstrates excellent insight into the work's impact on society, ethics and/or the environment and/or the consequences on society, ethics and the environment that follow weakly supported claims. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+% Critical thinking and reasoning (project plans only)
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Critical thinking and reasoning} (project plans only)} \\
+\hline
+\textbf{Fail} (--) &
+Lacks ability or willingness to objectively and critically discuss the relevance, reliability and validity of information/claims.
+Lacks evidence-based reasoning.
+Lacks a discussion of societal, ethical and/or environmental aspects of the work. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline 
+\textbf{Acceptable} (1) &
+Indicates some ability to objectively and critically discuss the relevance,
+reliability and validity of information/claims.
+Key facts, claims and reasoning are relevant, objective, critical and supported by evidence.
+Indicates some insight into the work's impact on society, ethics and/or the environment and/or the consequences on society, ethics and/or the environment that follow weakly supported claims. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates an ability to objectively and critically discuss the relevance,
+reliability and validity of information/claims.
+Most facts, claims and reasoning are relevant, objective, critical and based on evidence.
+Demonstrates insight into the work's impact on society, ethics and/or the environment and/or the consequences on society, ethics and/or the environment that follow weakly supported claims. \\
+\hline
+\textbf{Very good} (4) & \ldots \\
+\hline
+\textbf{Excellent} (5) &
+Excellent ability to objectively and critically discuss the relevance,
+reliability and validity of information/claims.
+Excellent evidence-based reasoning abilities; all facts, claims and reasoning are relevant, objective, critical and based on evidence.
+Clearly demonstrates excellent insight into the work's impact on society, ethics and/or the environment and/or the consequences on society, ethics and the environment that follow weakly supported claims. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+% Planning (project plans only)
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Planning} (project plans only)} \\
+\hline
+\textbf{Fail} (--) &
+Trivial or infeasible WBS (Work Breakdown Structure) and schedule.
+Does not consider required resources.
+Considers only trivial risks. Lacks impact analysis and mitigation strategy/plan. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline 
+\textbf{Acceptable} (1) &
+Feasible but not very realistic WBS and schedule.
+Insufficient analysis regarding required resources.
+Identifies some relevant non-trivial risks.
+Ignores some important risks and/or identifies irrelevant risks.
+Simplistic impact analysis and mitigation strategy/plan. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) & 
+Realistic WBS, schedule, and expectations about required resources.
+Identifies most relevant and important risks. Ignores irrelevant risks.
+Meaningful impact analysis and mitigation strategy/plan. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Excellent WBS, schedule and analysis of required resources.
+Identifies all important risks and further relevant risks.
+Excellent impact analysis and mitigation strategy/plan. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+
+\clearpage
+\subsection{Scientific quality (theses only)}
+
+% Overall contribution
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Overall contribution}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks contribution or potential contribution is not discussed.
+Research questions have not been answered.
+Aims and objectives of the thesis have neither been discussed, nor been achieved. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+The contribution to research and/or practice has been described, but not with
+sufficient clarity. The contribution has not been discussed objectively and critically.
+Most research questions have been answered in an acceptable way.
+Achievement of aims and objectives of the thesis has been discussed and some of them have been achieved. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+The contribution to research and/or practice has been described clearly, and been discussed largely objectively and critically.
+All research questions have been answered in an acceptable way and some of them well.
+Aims and objectives of the thesis have been largely achieved. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+The contribution to research and practice has been described and discussed clearly, objectively and critically.
+All research questions have been answered well.
+Aims and objectives of the thesis have been clearly achieved. (For Master/MSE theses: The contribution is of a quality equivalent to a publishable academic article.) \\ 
+\hline
+\end{tabular}
+\end{center}
+
+% Scientific & engineering reasoning
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Scientific \& engineering reasoning}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks ability or willingness to objectively and critically evaluate the relevance, reliability and validity of information/claims.
+Uses ``bold'' claims and threads of reasoning that are not based on sufficient evidence.
+Important concepts and terminology have not been introduced or been described and used incorrectly and inconsistently.
+Introduces and uses many irrelevant or inadequate concepts or terminology in relation to the relevant and important ones. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Indicates some ability to objectively and critically evaluate the relevance, reliability and validity of information/claims.
+Key facts, claims and threads of reasoning are relevant, objective, critical and supported by acceptable evidence.
+The most important and most relevant concepts and terminology have been introduced largely correctly and are largely used consistently with acceptable precision.
+Introduces and uses little irrelevant or inadequate concepts or terminology in relation to the relevant and important ones. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates an ability to objectively and critically evaluate the relevance, reliability and validity of information/claims.
+Most facts, claims and threads of reasoning are relevant, objective, critical and based on evidence.
+The majority of concepts and terminology have been introduced correctly and are used consistently with high precision.
+Introduces and uses a negligible amount of irrelevant or inadequate concepts or terminology. \\
+\hline
+\textbf{Very good} (4) & \ldots \\
+\hline
+\textbf{Excellent} (5) &
+Excellent ability to objectively and critically evaluate the relevance, reliability and validity of information/claims.
+All facts, claims and threads of reasoning are relevant, objective, critical and based on solid evidence.
+All concepts and terminology have been introduced correctly and are used consistently with high precision.
+Lacks irrelevant or inadequate concepts or terminology. \\ 
+\hline
+\end{tabular}
+\end{center}
+
+% Traceability and validity
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Traceability and validity}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks a description of relevant validity threats.
+Lacks a discussion of how obvious validity threats might affect the results/conclusions.
+Conclusions are unclear and are not based on actual evidence/data/results and their analysis. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Describes several relevant validity threats.
+Indicates how some of the validity threats might affect the results/conclusions.
+Conclusions are to some degree based on actual evidence/data/results and their analysis. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Discusses most relevant validity threats.
+Discusses for most validity threats how they might affect the results/conclusions. Implemented or potential countermeasures to mitigate the threats are described.
+There is a clear thread of evidence from the data and their analysis over the results to the conclusions. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+All relevant validity threats are described and discussed clearly, including how they might affect the results/conclusions.
+Implemented and potential countermeasures to mitigate the threats are described clearly and thoroughly.
+There is a clear thread of evidence from the data and their analysis over the results to the conclusions. \\
+\hline
+\end{tabular}
+\end{center} 
+
+% Synthesis
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Synthesis}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks synthesis. Does not go beyond paraphrasing. Restates or summarises existing works and own materials in unsystematic/unorganized ways. Does not connect or combine the statements/summaries and does not describe their ``meaning'' with respect to the own work. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Demonstrates some ability to go beyond paraphrasing. Indicates an ability to organize information from existing works and/or own materials in a systematic and logical way to describe their ``meaning'' in the context of the own work. \\
+\hline
+\textbf{Satisfactory} (2) & \ldots \\
+\hline
+\textbf{Good} (3) &
+Demonstrates the ability to organize and summarise information from existing works and own materials and combine these in systematic and logical ways into explanations, discussions or conclusions that go beyond the analysis of individual works or results. 
+Answers many ``So What?'' questions. \\
+\hline
+\textbf{Very good} (4) & \ldots \\
+\hline
+\textbf{Excellent} (5) &
+Clearly demonstrates the ability for systematically and logically putting together thoughts based on analyses of existing works and own materials to derive new knowledge. Demonstrates a strong focus on answering ``So What?'' questions. \\
+\hline
+\end{tabular}
+\end{center}
+
+%
+\clearpage
+\subsection{Presentation (project plans and theses)}
+
+% Disposition, formatting and layout
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Disposition, formatting and layout}} \\
+\hline
+\textbf{Fail} (--) &
+Chapter and section headers are generic and not adapted to the specific thesis topic and contents.
+Visuals (tables, figures and illustrations) and lists are not used where appropriate or expected.
+Most visuals and lists do not contribute to the comprehension of the materials.
+Most visuals and lists are described/explained insufficiently.
+Most visuals and lists have a type/style/design/layout that is inappropriate for their intended purpose.
+The style/design/layout of visuals and lists is inconsistent. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Chapter and section headers are somewhat adapted to the topic and contents of the thesis.
+Visuals and lists are used in most places where they would be expected.
+There are few visuals or lists that could be deleted without affecting the comprehension of the materials negatively.
+Most visuals and lists are described/explained in acceptable detail.
+Most visuals and lists have a type/style/design/layout that somewhat fits their intended purpose.
+The style/design/layout of visuals and lists is somewhat consistent. \\
+\hline
+\textbf{Satisfactory} (2) & \ldots \\
+\hline
+\textbf{Good} (3) &
+The thesis has a systematic disposition. Chapter, section and subsection headers are adapted well
+to the topic and contents of the thesis and support the readability and comprehensibility of the text.
+Visuals and lists are used in almost all places where they would be expected.
+There are very few visuals or lists that could be deleted without affecting the comprehension of the materials negatively.
+Visuals and lists are generally described/explained well.
+Most visuals and lists have a type/style/design/layout that fits their intended purpose well.
+The style/design/layout of visuals and lists is largely consistent. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+The thesis has an excellent and systematic disposition throughout. Chapter, section and subsection headers are adapted
+excellently to the specific topic and contents of the thesis and support the readability and comprehensibility of the text very well.
+Visuals and lists are used in all places where they contribute to the comprehension of the materials.
+There are no visuals or lists that could be easily deleted without affecting the comprehension of the materials negatively.
+Visuals and lists are generally described/explained very well.
+Visuals and lists have a type/style that fits their intended purpose very well and a very professional design/layout.
+The style/design/layout of visuals and lists is consistent throughout the thesis. \\
+\hline
+\end{tabular}
+\end{center} 
+
+% Handling of references and citations
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Handling of references and citations}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks the most important and/or most recent sources.
+The format and layout of references and citations are incomplete and inconsistent. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Lacks some important and/or recent sources.
+The format and layout of references and citations are mostly complete
+and somewhat consistent. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Cites all important sources.
+The format and layout of references and citations are complete and consistent. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Cites all relevant sources.
+Flawless formatting and layout of references and citations. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+% % Coherence and cohesion
+% \begin{center}
+% \small
+% \begin{tabular}{|l|p{12.2cm}|}
+% \hline
+% \multicolumn{2}{|l|}{\normalsize \textbf{Coherence and cohesion}} \\
+% \hline
+% \textbf{Fail} (--) &
+% There are no clear threads of reasoning throughout the report.
+% The content does not fit logically together; ideas and arguments are not connected (coherence).
+% Sentences, paragraphs and (sub)sections are not connected on a textual level (cohesion).
+% I.e. the contents of the thesis give an impression of random order; on idea level as well
+% as on text level. \\
+% \hline
+% \textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+% There are some clear threads of reasoning.
+% Coherence is acceptable in the key parts of the report
+% (the most important ideas and arguments are presented in a logical order).
+% Cohesion is acceptable in the key parts of the report
+% (the sentences and paragraphs build a logical flow of text). \\
+% \hline 
+% \textbf{Satisfactory} (2) & \ldots \\
+% \hline 
+% \textbf{Good} (3) &
+% There are clear threads of reasoning throughout the report.
+% Coherence is good; in large, ideas and arguments fit logically together.
+% Cohesion is good; in large, the sentences in a paragraph, the paragraphs in a section,
+% and the sections in a chapter build a natural flow of text. \\
+% \hline 
+% \textbf{Very good} (4) & \ldots \\
+% \hline 
+% \textbf{Excellent} (5) &
+% There is a single and clear thread of reasoning throughout the report.
+% Coherence is excellent; all ideas and arguments fit together excellently.
+% Cohesion is excellent; all sentences in a paragraph, all paragraphs in a section,
+% and all sections in a chapter build a natural flow of text. \\ 
+% \hline
+% \end{tabular}
+% \end{center} 
+
+% Language
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Language}} \\
+\hline
+\textbf{Fail} (--) &
+Poor. The text contains many spelling/grammar errors. The text is difficult to read and to understand due to language issues. The text does not meet the requirements for an academic writing style. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Acceptable language processing. There are still many linguistic shortcomings, but the text is readable and understandable with acceptable effort. In large, the text follows an academic style. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Good language processing. The subject is treated with clear prose that follows an academic writing style. Some linguistic shortcomings remain, but the text is easy to read and easy to understand. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Excellent language processing. The subject is treated with very clear prose that meets the requirements for scientific text of very high quality. \\
+\hline
+\end{tabular}
+\end{center}
+
+%
+\clearpage
+\section{Evaluation of aspects for oral presentations and defenses}
+%
+\subsection{Contents}
+
+% Knowledge and understanding (presentations/defenses)
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Knowledge and understanding}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks knowledge and understanding in the subject of study.
+Lacks knowledge and understanding in the discussed.
+Lacks knowledge and understanding in current research and development central to the thesis. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Indicates sufficient knowledge and understanding in the subject of study.
+Indicates sufficient knowledge and understanding in the discussed.
+Indicates sufficient knowledge and understanding in current research and development central to the thesis. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates good knowledge and understanding in the subject of study.
+Demonstrates good knowledge and understanding in the discussed.
+Demonstrates good knowledge and understanding in current research and development central to the thesis. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Clearly demonstrates thorough knowledge and understanding in the subject of study.
+Clearly demonstrates thorough knowledge and understanding in the discussed.
+Clearly demonstrates thorough and understanding in current research and development central to the thesis. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+\clearpage
+\subsection{Presentation}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Oral description of problem and method}} \\
+\hline
+\textbf{Fail} (--) &
+Neither problems nor methods are described or motivated clearly. Descriptions
+are generally superficial and indistinct. The audience has difficulties understanding
+what was done and why. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Acceptable motivation of problems and methods. Descriptions are either too brief or too comprehensive, but at an acceptable depth/level, so that the audience, in large, can understand most of what was done and why. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Clear and concise motivation of problems and methods. Descriptions are of adequate
+length and sufficient depth/level, so that the audience, can understand clearly
+what was done and why. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Problems and methods are described and motivated very clearly and concisely.
+The depth/level of the descriptions allows the audience to get deep insights
+on what was done and why. Problem aspects that are relevant outside the main topic
+of the thesis are discussed. Methods are compared systematically with related work. \\
+\hline
+\end{tabular}
+\end{center}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Oral description of analysis and contribution}} \\
+\hline
+\textbf{Fail} (--) &
+Neither analyses nor contributions are discussed or motivated clearly.
+Descriptions are generally superficial and indistinct. The audience has difficulties
+understanding conclusions and contributions. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Acceptable motivation of analyses and contributions.
+Descriptions are too brief or too comprehensive, but at an acceptable depth/level,
+so that the audience, in large, can understand conclusions and contributions. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Clear and concise motivation of analyses and contributions.
+Descriptions are of adequate length and sufficient depth/level,
+so that the audience, can understand conclusions and contributions clearly. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Analyses and contributions are described and motivated very clearly and concisely.
+The depth/level of the descriptions allows the audience to get deep insights
+into conclusions and contributions. The contributions' impact on areas outside the main topic of the thesis are discussed clearly. Results are compared systematically with related work. \\
+\hline
+\end{tabular}
+\end{center}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Overall communication skills}} \\
+\hline
+\textbf{Fail} (--) &
+The presentation is either significantly shorter or significantly longer than the time allocated. The presentation
+is either too vague or too superficial and not on an academic level. Poor language. Poor visuals. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+The presentation is largely on time. The presentation is largely on an
+acceptable academic level. Acceptable language. Acceptable visuals. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+The presentation is on time. The presentation is on an adequate academic level.
+Good language. Good visuals. Maintains interest of audience. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+The presentation is on time. The presentation is on a very high academic level.
+Excellent language. Excellent visuals. Maintains interest of audience. \\
+\hline
+\end{tabular}
+\end{center}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Argumentation- and discussion abilities}} \\
+\hline
+\textbf{Fail} (--) &
+Insufficient, inaccurate, or very vague answers. Too brief or excessively long answers.
+Poor ability to handle critique constructively and objectively and to argue in defense. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Most answers are clear, and largely accurate but mostly too brief or
+lengthy. Acceptable ability to objectively and constructively handle critique
+and discuss basic positions. Indicates knowledge of the broader area of the topic. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+All answers are insightful, clear, factual, and accurate, and of adequate length/depth.
+Good ability to objectively and constructively handle critique and engage in basic
+technical and scientific discussions. Demonstrates good knowledge of the broader area of the topic. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+All answers are insightful, clear, factual, and accurate, and of adequate length/depth.
+Excellent ability to objectively and constructively respond critique and engage in deep
+technical and scientific discussions. Demonstrates excellent knowledge, even beyond the actual topic. \\
+\hline
+\end{tabular}
+\end{center}
+
+%
+\clearpage
+\section{Evaluation of aspects for written oppositions}
+%
+\subsection{Contents}
+%
+% Knowledge and understanding (oral & written oppositions)
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Knowledge and understanding}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks understanding of the reviewed thesis. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Indicates sufficient understanding of the reviewed thesis. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates a good understanding of the reviewed thesis. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Clearly demonstrates a thorough understanding of the reviewed thesis. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Description of critical review}} \\
+\hline
+\textbf{Fail} (--) &
+The report is sloppily executed and contains numerous errors.
+The critical review is superficial and generic.
+The presentation is generally unclear and inadequate. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+The critique is largely objective, relevant, and accurate.
+Contains some language and content errors. Acceptable structure and length/depth. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+The critique is specific, balanced, objective, relevant, and accurate.
+Contains very few language and content errors.
+Well-structured, well-organized, and of adequate length/depth. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+The critique is very specific, balanced, objective, relevant, and accurate.
+Basically free of errors. Excellent structure, organization, and length/depth.
+Comments are systematically arranged and each comment is clearly motivated scientifically. Related work is cited as necessary. \\
+\hline
+\end{tabular}
+\end{center}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Description of necessary revisions and recommended revisions}} \\
+\hline
+\textbf{Fail} (--) &
+Suggestions are carelessly described and not organised systematically.
+The text contains numerous errors.
+Unclear how the suggestions would improve the reviewed thesis.
+The presentation is generally unclear. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Suggestions are mostly constructive, relevant, and accurate.
+In large, it is clear how the suggestions
+can be implemented and how they might improve the reviewed thesis.
+Contains some language and content errors. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Suggestions are constructive, highly relevant, and accurate.
+It is clear how the suggestions can be implemented and how they will improve the reviewed thesis.
+Contains very few language and content errors.
+Suggestions are well-structured, well-organized, and of adequate length/depth. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Suggestions are very constructive, highly relevant, and accurate.
+Very clear how the suggestions can be implemented and how they will improve the reviewed thesis.
+Basically error free. Excellent structure, organization, and length/depth.
+Suggestions are systematically arranged and each suggestion is clearly motivated scientifically.
+Related work is cited as necessary. \\
+\hline
+\end{tabular}
+\end{center}
+
+%
+\clearpage
+\subsection{Presentation}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Analysis and argumentation}} \\
+\hline
+\textbf{Fail} (--) &
+Analysis and argumentation are missing, incorrect, not based on reasonable assumptions,
+or do not rest on a scientific basis. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Analysis and argumentation are based on some evidence.
+The level of analysis is generally acceptable for the discussed issues. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Analysis and argumentation are based on scientific evidence.
+Clear analysis and reasoning contribute to insights in the chosen area. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Excellent analysis and argumentation. Advanced analysis and stringent reasoning contribute to substantial insights in the chosen area. \\ 
+\hline
+\end{tabular}
+\end{center} 
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Language}} \\
+\hline
+\textbf{Fail} (--) &
+Poor. The text contains many spelling/grammar errors. The text is difficult to read and to understand due to language issues. The text does not meet the requirements for academic writing. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Acceptable language processing. There are still many linguistic shortcomings, but the text is readable and understandable. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Good language processing. The subject is treated with clear prose that largely meets
+the requirements for academic writing. Some linguistic shortcomings remain, but the text is easy to read and easy to understand. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Excellent language processing. The subject is treated with very clear prose that meets
+the requirements for scientific text of very high quality. \\
+\hline
+\end{tabular}
+\end{center}
+
+%
+\clearpage
+\section{Evaluation of aspects for oral oppositions}
+%
+\subsection{Contents}
+%
+% Knowledge and understanding (oral & written oppositions)
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Knowledge and understanding}} \\
+\hline
+\textbf{Fail} (--) &
+Lacks understanding of the reviewed thesis. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\
+\hline
+\textbf{Acceptable} (1) &
+Indicates sufficient understanding of the reviewed thesis. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+Demonstrates a good understanding of the reviewed thesis. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+Clearly demonstrates s thorough understanding of the reviewed thesis. \\ 
+\hline
+\end{tabular}
+\end{center} 
+
+\subsection{Presentation}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Overall communication skills}} \\
+\hline
+\textbf{Fail} (--) &
+The opposition is either significantly shorter or significantly longer than the time allocated. Few questions on actual thesis contents. Most questions or comments are not constructive. Most questions
+are either too vague, too superficial, or too generic.
+Most questions focus on irrelevant details (e.g., spelling and grammar). Poor language. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+The opposition is largely on time. The questions are largely relevant
+and on an acceptable academic level. Acceptable language. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+The presentation is on time. All questions are relevant and specific and on an adequate academic level.
+Good language. Maintains interest of audience. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+The presentation is on time. All questions are highly relevant, very specific and on a high academic level. Excellent language. Maintains interest of audience. \\
+\hline
+\end{tabular}
+\end{center}
+%
+\begin{center}
+\small
+\begin{tabular}{|l|p{12.2cm}|}
+\hline
+\multicolumn{2}{|l|}{\normalsize \textbf{Analysis and argumentation}} \\
+\hline
+\textbf{Fail} (--) &
+Irrelevant, inaccurate, or very vague questions.
+Very short or excessively long questions. More statements and general, generic comments than actual questions. \\
+\hline
+\textbf{Insufficient} (0) & \tableEntryInsufficient \\ \hline \textbf{Acceptable} (1) &
+Most questions are clear, as well as largely relevant and accurate.
+Indicates ability to present critique objectively and constructively. \\
+\hline 
+\textbf{Satisfactory} (2) & \ldots \\
+\hline 
+\textbf{Good} (3) &
+All questions are clear, relevant and accurate.
+Demonstrates good ability to present critique objectively and constructively.
+Indicates ability to engage in technical and scientific discussions. \\
+\hline 
+\textbf{Very good} (4) & \ldots \\
+\hline 
+\textbf{Excellent} (5) &
+All questions are very insightful, very clear, highly relevant and accurate.
+Demonstrates excellent ability to present critique objectively and constructively.
+Demonstrates excellent ability to engage in deep technical and scientific discussions. \\
+\hline
+\end{tabular}
+\end{center}
+
+%\chapterendsymbol
+
+
+\chapter{Document templates}
+\label{chp:templates}
+The project plan, the final report (thesis), the opposition report, and the rejoinder
+shall be written using official and recent document templates.
+Please refer to the \emph{Student portal} for these templates.
+This chapter describes necessary and recommended content
+as well as additional formal rules and requirements that govern the
+contents of the documents for the degree project courses.
+Please note that there is no template for the presentation.
+
+For all documents, length should be appropriate for the content. Your writing should
+be concise and to the point. A longer document will not
+necessarily be better. On the contrary, adding irrelevant, inappropriate, or
+repetitive content will likely result in lower marks. For details on
+academic writing, please consult Chapter~\ref{chp:academic-writing}.
+
+If you don't use our \LaTeX\-templates, please use font Times, Times Roman or
+Times New Roman with font size 12pt and single line spacing for the regular text. 
+Headers as well as regular paragraphs should start at the left margin of a page.
+Regular text should be aligned left and right, as in the paragraphs shown here (i.e. unlike in Word).
+There should be no white-space between paragraphs, but the first line of each
+paragraph should be indented, except for the first paragraph following a section-, subsection-, or sub-subsection header.
+
+References should be formatted according to \LaTeX's \textit{plain} format,
+which is a number-format somewhat similar to IEEE-format. Contrary to IEEE-format,
+references are numbered in alphabetic order, though, and ``et al.'' is not allowed
+in the reference list.
+
+
+\section{Document template for project plans}
+On the front page, a project plan should include the course name and formal data
+about the thesis project, like title, author(s), person ID(s), email-address(es),
+and supervisor name(s). The content should contain the following sections,
+preferably in the following order:
+introduction, aim, objectives, research questions, method, expected outcomes,
+time and activity plan, risk management, and references.
+
+The introduction should describe the background and context of the proposed work.
+It should clearly identify a problem and motivate its relevance. Furthermore,
+the introduction should review related work and describe how the proposed work
+fits in. For MSE-theses, a subsection should be included that briefly discusses
+aspects regarding ethics, society and sustainability that are or might be relevant
+in the context of the proposed work. 
+
+The aim should describe the overall general goal of the thesis in one or two
+brief sentences. The objectives break down the aim into more specific
+and measurable sub-goals. The objectives are then operationalized by
+one or more specific and answerable research questions or hypotheses.
+Aims, objectives and research questions/hypotheses should be clearly aligned,
+i.e. related to each other. All three parts (aim, objectives and research questions)
+can very well be described in one section.
+
+The method section should propose a suitable approach (research design) for
+answering the research questions together with a motivation for choosing
+the proposed approach.
+
+Expected outcomes briefly states the main expected outcomes. The outcomes
+correspond to the contribution of the thesis.
+The expected outcomes should be clearly aligned with the aim, objectives and research questions.
+
+The time and activity plan breaks down the work into reasonable
+tasks and a reasonable schedule. For MSE-theses, a supervision plan should be included
+that describes how project tracking and follow-up will be handled in collaboration with the supervisor(s).  
+
+In risk management, various problems that may threaten the timely delivery of
+acceptable results are briefly investigated. For each risk a brief mitigation
+strategy should be provided.
+
+
+\section{Document template for final reports (theses)}
+The thesis is the main artifact of the degree project. Accepted
+theses will be published electronically. It is therefore important that all
+theses have a uniform and professional appearance and, to some extent,
+a predictable breakdown of the content.
+A uniform appearance is particularly important with respect to the ``front
+matter.'' The title page should therefore be produced by filling in
+the necessary information in the document template for theses. Its
+appearance should not be changed. In particular, there should be no
+company/~organization logotypes on the front-page, except the BTH-logo. 
+%This document template is only available in Microsoft Word format.
+
+The title page should be followed by a structured abstract summarizing
+the thesis using the following elements: context, objectives, methods, results, and
+conclusions. Keywords (up to five) should be specified after the structured abstract.
+Theses written in Swedish should have an abstract in Swedish and an abstract in English.
+MSE-theses should always have abstracts in Swedish and in English.
+
+The next page can be set aside for thanks or acknowledgements to those who
+helped you during the thesis work. The content and format of this page is
+up to you, but the text should only highlight people who actually contributed
+to the thesis in some way.
+These persons should be arranged by the extent of their respective contributions.
+Usually this means that the student would like to thank the supervisor, any other
+contributing colleagues, fellow students, or family members.
+
+The order of the main content of the thesis depends on the actual topic of the thesis.
+Please note that there is no ``one-size-fits-all'' structure for theses.
+Different genres, research areas, or research methods have different information needs and traditions
+and you need to carefully investigate what is appropriate for your particular topic.
+
+The following items should, however, be included for all types
+of theses, but not necessarily in this order:
+abstract, table of contents, introduction (including background information and the description of a
+relevant problem), aims, objectives and research questions, related work, methodology
+(describing the research design), results, analysis, discussion, conclusions and
+bibliography/references.
+Including an item does not necessarily mean that you need to include a separate
+section with this particular header. It just means that this particular type of
+content should be included. Header names should be chosen so that they are
+aligned with your particular topic and title. 
+
+The thesis text should have a scientific basis and be free from grammatical errors.
+Your supervisor is not responsible for pointing out language, style, and grammar
+issues.
+Using your supervisor as ``proof reader'' would also be a waste of precious
+subject expert time.
+
+Remember to write concise and to the point. The complete thesis text,
+excluding preliminaries (like abstract, table of contents and so on), references and appendices, shall not exceed 80 pages. More information on formatting, structure and length of a thesis can be found in the template for the full report which is available at the \emph{Student portal}. 
+
+
+% Deleted 2019-03-11 (JUB)
+%\section{Document template for compilation-style theses}
+%%
+%A thesis can be also written as a scientific journal article instead
+%of a monograph. A journal article presents the materials in a more concise
+%form and usually contains less basic information about the research
+%methodology (since it targets a more narrow audience with more knowledge
+%of the theory and methods of the research area in question than the
+%general population). Due to this reason and since the journal article 
+%format is rather dense in general, it is difficult to include certain
+%content that is required (and assessed) in theses. The compilation-style
+%thesis therefore needs to include an introductory chapter that precedes
+%the journal article and which includes a more thorough description and
+%motivation of the research methodology (and any additional topics that
+%are required in the degree project course, but which are not included
+%in the journal article).
+
+
+\section{Document template for opposition reports}
+An opposition report comprises five main parts: introduction, critical review,
+required changes, recommended changes and references.
+
+The introduction gives a brief overview over the reviewed thesis'
+content, results, and contributions from the reviewer's point of view.
+The critical review highlights the strengths and weaknesses of the
+reviewed thesis. Required changes points out issues that need to
+resolved in the final version of the thesis. Recommended changes
+points out further issues that are less critical, but would help to improve
+the thesis further.
+
+A reference section is only necessary if the opposition report
+uses references.
+
+
+\section{Document template for rejoinders}
+A rejoinder is a formal ``response'' to assessment comments. In a rejoinder,
+an author responds to feedback and change requests that he or she received,
+e.g., from opponents.
+The author also describes how his or her work was updated to mitigate the
+issues that were pointed out.
+
+A typical rejoinder has the following parts: introduction, responses to opponent
+reports, responses to further feedback and references.
+
+The introduction provides a brief summary of the changes made in response to
+the critique. In the responses to opponent reports and further feedback,
+respectively, all comments are listed one by one together with an \textit{answer}
+to the comment. Each answer provides a ``rebuttal'' to the comment and then
+clearly describes what the author has changed to resolve the
+comment and where this change (or changes) can be found in the updated
+document.
+
+A reference section is only necessary if the rejoinder uses references.
+
+
+%\chapterendsymbol
+%
+\backmatter
+%
+\nocite{*}
+\bibliographystyle{IEEEtranS}
+\bibliography{references}
+%
+\end{document}
