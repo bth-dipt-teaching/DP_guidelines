@@ -1,5 +1,5 @@
 name: Build Guidelines PDF
-on: [push]
+on: [push, pull_request]
 jobs:
   build_guidelines_pdf:
     runs-on: ubuntu-latest
